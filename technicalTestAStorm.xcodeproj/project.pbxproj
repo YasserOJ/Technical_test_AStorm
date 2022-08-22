@@ -22,6 +22,8 @@
 		5713FD8928B423B3006F0E8A /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5713FD8828B423B3006F0E8A /* HTTPTask.swift */; };
 		5713FD8C28B42E8A006F0E8A /* WeatherApiEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5713FD8B28B42E8A006F0E8A /* WeatherApiEndPoint.swift */; };
 		5713FD8E28B43078006F0E8A /* WeatherApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5713FD8D28B43078006F0E8A /* WeatherApiManager.swift */; };
+		5713FD9128B440C8006F0E8A /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5713FD9028B440C8006F0E8A /* Connectivity.swift */; };
+		5713FD9328B443C1006F0E8A /* LocationGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5713FD9228B443C1006F0E8A /* LocationGeoCoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5713FD8828B423B3006F0E8A /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		5713FD8B28B42E8A006F0E8A /* WeatherApiEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiEndPoint.swift; sourceTree = "<group>"; };
 		5713FD8D28B43078006F0E8A /* WeatherApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiManager.swift; sourceTree = "<group>"; };
+		5713FD9028B440C8006F0E8A /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		5713FD9228B443C1006F0E8A /* LocationGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGeoCoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		5713FD4728B40E8E006F0E8A /* technicalTestAStorm */ = {
 			isa = PBXGroup;
 			children = (
+				5713FD8F28B440B6006F0E8A /* Utils */,
 				5713FD8428B422EE006F0E8A /* Config */,
 				5713FD7D28B41E99006F0E8A /* Networking */,
 				5713FD7C28B419C2006F0E8A /* Supporting Files */,
@@ -201,6 +206,15 @@
 				5713FD8D28B43078006F0E8A /* WeatherApiManager.swift */,
 			);
 			path = "Weather Api";
+			sourceTree = "<group>";
+		};
+		5713FD8F28B440B6006F0E8A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5713FD9028B440C8006F0E8A /* Connectivity.swift */,
+				5713FD9228B443C1006F0E8A /* LocationGeoCoder.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,8 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5713FD9328B443C1006F0E8A /* LocationGeoCoder.swift in Sources */,
 				5713FD8928B423B3006F0E8A /* HTTPTask.swift in Sources */,
 				5713FD8028B41F31006F0E8A /* EndPointType.swift in Sources */,
+				5713FD9128B440C8006F0E8A /* Connectivity.swift in Sources */,
 				5713FD4D28B40E8E006F0E8A /* ViewController.swift in Sources */,
 				5713FD8228B41F6E006F0E8A /* NetworkParameters.swift in Sources */,
 				5713FD4928B40E8E006F0E8A /* AppDelegate.swift in Sources */,
