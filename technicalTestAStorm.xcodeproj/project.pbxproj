@@ -49,6 +49,7 @@
 		5713FD6928B40E91006F0E8A /* technicalTestAStormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = technicalTestAStormUITests.swift; sourceTree = "<group>"; };
 		5713FD6B28B40E91006F0E8A /* technicalTestAStormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = technicalTestAStormUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5713FD7928B418E2006F0E8A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5713FD8528B42311006F0E8A /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		5713FD4728B40E8E006F0E8A /* technicalTestAStorm */ = {
 			isa = PBXGroup;
 			children = (
+				5713FD8428B422EE006F0E8A /* Config */,
 				5713FD7C28B419C2006F0E8A /* Supporting Files */,
 				5713FD7B28B4199C006F0E8A /* Application */,
 				5713FD7828B418BF006F0E8A /* Resources */,
@@ -343,6 +345,7 @@
 /* Begin XCBuildConfiguration section */
 		5713FD6D28B40E91006F0E8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5713FD8528B42311006F0E8A /* DEV.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -403,6 +406,7 @@
 		};
 		5713FD6E28B40E91006F0E8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5713FD8528B42311006F0E8A /* DEV.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

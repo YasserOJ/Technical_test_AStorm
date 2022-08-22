@@ -1,0 +1,10 @@
+//
+//  DEV.xcconfig
+//  technicalTestAStorm
+//
+//  Created by Yasser Omar Jammeli on 22/8/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+OTHER_SWIFT_FLAGS = $(inherited) -DTEST_ENV_DEV
