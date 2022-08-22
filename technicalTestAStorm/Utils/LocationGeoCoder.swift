@@ -21,4 +21,14 @@ class LocationGeoCoder {
         }
     }
     
+    func getLocationFrom(cityName: String, complition: @escaping ((Double?, Double?) ->())){
+        CLGeocoder().geocodeAddressString(cityName) { places, error in
+            if let places = places, places.count > 0 {
+                let place = places.first
+                complition(place?.location?.coordinate.latitude, place?.location?.coordinate.longitude)
+            }
+            complition(nil, nil)
+        }
+    }
+    
 }
