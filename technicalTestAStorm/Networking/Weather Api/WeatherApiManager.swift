@@ -9,7 +9,12 @@ import Foundation
 
 class WeatherApiManager {
     
-    func addLocation(lat: Double, lng: Double , completion: @escaping ((Result<Int,Error>) -> ()) )  {
-        HTTPTask.request(endPointType: WeatherApi.addLocation(lat: lat, lng: lng), completion: completion)
+    func addLocation(lat: Double, lng: Double , completion: @escaping ((GenericResult<WeatherResponseModel>) -> ()) )  {
+        HTTPTask.request(endPointType: WeatherApi.addLocationByLatitude(lat, andLongitude: lng), completion: completion)
     }
+    
+    func addLocation(cityName: String , completion: @escaping ((GenericResult<WeatherResponseModel>) -> ()) )  {
+        HTTPTask.request(endPointType: WeatherApi.addLocationByCityName(cityName), completion: completion)
+    }
+
 }
