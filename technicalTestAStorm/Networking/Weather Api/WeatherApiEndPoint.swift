@@ -21,7 +21,7 @@ enum WeatherApi : EndPointType{
         case .addLocationByCityName(_: let cityName):
             path += "q=\(cityName)"
         }
-        return path
+        return ApiClient.baseURL() + path
     }
     
     var method: String {
