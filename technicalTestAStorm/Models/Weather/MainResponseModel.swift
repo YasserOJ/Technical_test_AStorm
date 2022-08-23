@@ -9,7 +9,7 @@ import Foundation
 
 struct Main: Codable {
     let temp: Double?
-    let feelsLike: Int?
+    let feelsLike: Double?
     let tempMin, tempMax: Double?
     let pressure, humidity: Int?
 
