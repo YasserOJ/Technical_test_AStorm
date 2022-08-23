@@ -9,9 +9,7 @@ import Foundation
 import MapKit
 
 class LocationGeoCoder {
-    static let shared =  LocationGeoCoder()
-    
-    func getCityNameFrom(lat: Double, lng: Double, complition: @escaping ((String?) ->())) {
+    static func getCityNameFrom(lat: Double, lng: Double, complition: @escaping ((String?) ->())) {
         CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: lat, longitude: lng)) { places, error in
             if let places = places, places.count > 0 {
                 let place = places.first
@@ -21,7 +19,7 @@ class LocationGeoCoder {
         }
     }
     
-    func getLocationFrom(cityName: String, complition: @escaping ((Double?, Double?) ->())){
+    static func getLocationFrom(cityName: String, complition: @escaping ((Double?, Double?) ->())){
         CLGeocoder().geocodeAddressString(cityName) { places, error in
             if let places = places, places.count > 0 {
                 let place = places.first
