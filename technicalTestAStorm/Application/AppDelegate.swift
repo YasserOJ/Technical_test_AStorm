@@ -14,10 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let initialViewController = SplashScreenViewController.instantiate(appStoryboardName: "SplashScreenStoryBoard")
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+        
+        setupConstraints()
+        
         return true
     }
 
 
+    func setupConstraints() {
+        UIViewController.swizzleLayoutConstraint()
+    }
 }
 
