@@ -7,10 +7,16 @@
 
 import Foundation
 
+public enum GenericResult<Value: Codable> {
+    case success(Value?)
+    case failure(GenericErrorModel)
+}
+
+
 public class HTTPTask {
     
     
-    class func request<T: Codable>( endPointType: EndPointType, completion : @escaping ((Result<T,Error>) -> ())  )  {
+    class func request<T: Codable>( endPointType: EndPointType, completion : @escaping (GenericResult<T>) -> Void)  {
         
         let session = URLSession.shared
         
@@ -24,14 +30,16 @@ public class HTTPTask {
         })
         //Set Params TODO
         
-        let task = session.dataTask(with: request) { (data, _, _) in
+        let task = session.dataTask(with: request) { (data, urlResponse, error) in
             DispatchQueue.main.async {
-                guard let data = data,
-                      let response = try? JSONDecoder().decode(T.self, from: data) else {
-                    completion(Result.failure(NSError()))
+                guard let data = data else {
+                    let serverError = String("900")
+                    let error = GenericErrorModel.init(message: "Server Error", code: serverError)
+                    completion(.failure(error))
                     return
                 }
-                completion(Result.success(response))
+                let result : GenericResult<T> = JSONDecoder().decodeResponse(from: data, urlResponse: urlResponse, error: error)
+                completion(result)
             }
         }
         task.resume()
@@ -41,4 +49,47 @@ public class HTTPTask {
 #endif
     }
     
+}
+
+
+extension JSONDecoder {
+    
+    func decodeResponse<T: Codable>(from response: Data, urlResponse : URLResponse?, error: Error?) -> GenericResult<T> {
+        
+        guard error == nil else {
+            let serverError = String("900")
+            let error = GenericErrorModel.init(message: "Server Error", code: serverError)
+            return .failure(error)
+        }
+        if let urlResponse = urlResponse as? HTTPURLResponse{
+            if urlResponse.statusCode >= 200 && urlResponse.statusCode < 300 {
+                return parseData(data: response)
+            } else {
+                return parseError(data: response)
+            }
+        } else{
+            let serverError = String("900")
+            let error = GenericErrorModel.init(message: "Server Error", code: serverError)
+            return .failure(error)
+        }
+        
+    }
+    
+    func parseData<T: Codable>(data: Data) -> GenericResult<T> {
+        do {
+            let item = try decode(T.self, from: data)
+            return .success(item)
+        } catch {
+            return .failure(GenericErrorModel.init(message: "Decoding Error", code: "-1"))
+        }
+    }
+    
+    func parseError<T: Codable>(data: Data) -> GenericResult<T> {
+        do {
+            let item = try decode(GenericErrorModel.self, from: data)
+            return .failure(item)
+        } catch {
+            return .failure(GenericErrorModel.init(message: "Decoding Error", code: "-1"))
+        }
+    }
 }
