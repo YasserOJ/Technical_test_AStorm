@@ -10,29 +10,33 @@ import Foundation
 
 enum WeatherApi : EndPointType{
     
-    case addLocation(lat: Double, lng: Double)
+    case addLocationByLatitude(_ lat: Double, andLongitude: Double)
+    case addLocationByCityName(_ cityName: String)
     var url: String {
-        var path = ""
+        var path = "?appid=\(ApiClient.appID())&units=metrics&"
         switch self {
-            
-        case .addLocation(lat: let lat, lng: let lng):
-            path += "?lat=\(lat)&lon=\(lng)&appid=\(ApiClient.appID())"
+
+        case .addLocationByLatitude(_: let latitude, andLongitude: let andLongitude):
+            path += "lat=\(latitude)&lon=\(andLongitude)"
+        case .addLocationByCityName(_: let cityName):
+            path += "q=\(cityName)"
         }
         return path
-
     }
     
     var method: String {
         switch self {
             
-        case .addLocation:
+        case .addLocationByLatitude:
+            return "GET"
+        case .addLocationByCityName:
             return "GET"
         }
     }
     
     var parameters: [String : Any?] {
         switch self {
-        case .addLocation:
+        case .addLocationByLatitude, .addLocationByCityName:
             return [:]
         }
     }

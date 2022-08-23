@@ -12,7 +12,7 @@ struct ServerParameters {
     let baseURL: String
     let apiKey: String
     static let devParameters: ServerParameters = ServerParameters(
-        baseURL: "https://api.openweathermap.org/data/2.5/onecall",
+        baseURL: "https://api.openweathermap.org/data/2.5/weather",
         apiKey: "0ae6735afdc6f99d7af23db5d1bd1fbe"
     )
     
