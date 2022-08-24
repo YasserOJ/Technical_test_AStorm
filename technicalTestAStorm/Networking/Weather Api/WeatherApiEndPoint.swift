@@ -13,7 +13,7 @@ enum WeatherApi : EndPointType{
     case addLocationByLatitude(_ lat: Double, andLongitude: Double)
     case addLocationByCityName(_ cityName: String)
     var url: String {
-        var path = "?appid=\(ApiClient.appID())&units=metrics&"
+        var path = "?appid=\(ApiClient.appID())&units=metric&"
         switch self {
 
         case .addLocationByLatitude(_: let latitude, andLongitude: let andLongitude):
