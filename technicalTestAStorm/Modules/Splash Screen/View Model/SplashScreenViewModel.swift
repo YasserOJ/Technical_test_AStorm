@@ -16,6 +16,7 @@ class SplashScreenViewModel {
     func getCities() {
         let cities :[String]? = UserDefaults.standard.object(forKey: savedCitiesKey) as? [String]
         if let cities = cities {
+            AppManager.shared.cities = cities
             if !cities.isEmpty {
                 if #available(iOS 12.0, *) {
                     let network = NetworkMonitor()
@@ -24,6 +25,7 @@ class SplashScreenViewModel {
                             self.performGetCities(cities: cities)
                         } else {
                             citiesWeather = getAllObjects
+                            AppManager.shared.userCitiesWeather = citiesWeather
                             goToCitiesWeatherOverView()
                         }
                     }
@@ -45,11 +47,15 @@ class SplashScreenViewModel {
                     if let cityWeather = cityWeather{
                         self.citiesWeather.append(cityWeather)
                     }
+                    if i == cities.count - 1 {
+                        AppManager.shared.userCitiesWeather = self.citiesWeather
+                        goToCitiesWeatherOverView()
+                    }
                 case .failure(_):
-                    break
-                }
-                if i == cities.count - 1 {
-                    goToCitiesWeatherOverView()
+                    if i == cities.count - 1 {
+                        AppManager.shared.userCitiesWeather = self.citiesWeather
+                        goToCitiesWeatherOverView()
+                    }
                 }
             }
         }
@@ -66,8 +72,11 @@ class SplashScreenViewModel {
     }
     
     func goToCitiesWeatherOverView(){
-        let window = UIApplication.shared.windows[0] as UIWindow
-        window.rootViewController = WeatherOverViewViewController.instantiate(appStoryboardName: "WeatherOverview")
-        
+        DispatchQueue.main.async {
+            let window = UIApplication.shared.windows[0] as UIWindow
+            let weatherOverViewController = WeatherOverViewViewController.instantiate(appStoryboardName: "WeatherOverview")
+            let navigationController = UINavigationController(rootViewController: weatherOverViewController)
+            window.rootViewController = navigationController
+        }
     }
 }
