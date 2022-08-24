@@ -46,8 +46,8 @@ class AddCityViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
+            locationManager.requestLocation()
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-            locationManager.startUpdatingLocation()
         }
     }
     /*
@@ -71,5 +71,8 @@ extension AddCityViewController : CLLocationManagerDelegate{
                 didTookMyLocation = true
             }
         }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }
