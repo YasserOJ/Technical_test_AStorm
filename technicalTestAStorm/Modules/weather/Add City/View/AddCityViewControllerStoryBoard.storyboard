@@ -18,28 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-yf-3Wf">
-                                <rect key="frame" x="20.5" y="94" width="373" height="34"/>
+                                <rect key="frame" x="20.5" y="94" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jku-R1-gHh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVg-Ue-ZY1">
-                                <rect key="frame" x="168.5" y="168" width="77" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVg-Ue-ZY1">
+                                <rect key="frame" x="120.5" y="184" width="173" height="50"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.8784313725490196" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i1J-3n-AXC"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add city"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add city">
+                                    <fontDescription key="titleFontDescription" name="ProductSans-Bold" family="Product Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addCity:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UEP-lv-DoM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtM-YI-mhj">
-                                <rect key="frame" x="141" y="270" width="132" height="31"/>
+                                <rect key="frame" x="120.5" y="305" width="173" height="50"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.87843137250000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add my Location"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add my location" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="ProductSans-Bold" family="Product Sans" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addMyLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YMI-XU-NbW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-aX-6zQ">
-                                <rect key="frame" x="183" y="224" width="48" height="21"/>
+                                <rect key="frame" x="183" y="259" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,8 +73,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ELz-yf-3Wf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="74X-2S-8BI"/>
+                            <constraint firstItem="qtM-YI-mhj" firstAttribute="height" secondItem="hVg-Ue-ZY1" secondAttribute="height" id="Eho-EV-kHe"/>
                             <constraint firstItem="9Xf-aX-6zQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="G81-Vo-IfO"/>
                             <constraint firstItem="ELz-yf-3Wf" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.9" id="NjO-et-LlN"/>
+                            <constraint firstItem="qtM-YI-mhj" firstAttribute="width" secondItem="hVg-Ue-ZY1" secondAttribute="width" id="Syf-8c-Svd"/>
                             <constraint firstItem="hVg-Ue-ZY1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vhr-7y-jLL"/>
                             <constraint firstItem="9Xf-aX-6zQ" firstAttribute="top" secondItem="hVg-Ue-ZY1" secondAttribute="bottom" constant="25" id="cQr-uJ-dnF"/>
                             <constraint firstItem="hVg-Ue-ZY1" firstAttribute="top" secondItem="ELz-yf-3Wf" secondAttribute="bottom" constant="40" id="epk-l3-q9N"/>
