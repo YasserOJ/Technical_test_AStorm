@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+class CityWeatherDetailViewModel {
+    var cityWeather : WeatherResponseModel?
+}

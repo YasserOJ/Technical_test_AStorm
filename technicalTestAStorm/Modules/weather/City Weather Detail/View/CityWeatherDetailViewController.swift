@@ -8,22 +8,33 @@
 import UIKit
 
 class CityWeatherDetailViewController: UIViewController {
-
+    
+    let viewModel = CityWeatherDetailViewModel()
+    
+    @IBOutlet weak var weatherDescriptionUIImageview: UIImageView!
+    @IBOutlet weak var temptureLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var minTempLabel: UILabel!
+    @IBOutlet weak var maxTempLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = viewModel.cityWeather?.name
+        
+        setUpUIData()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpUIData()  {
+        weatherDescriptionUIImageview.image = UIImage(named: viewModel.cityWeather?.weather?[0].icon ?? "")
+        temptureLabel.text = "\(viewModel.cityWeather?.main?.temp  ?? 0)"
+        feelsLikeLabel.text = "\(viewModel.cityWeather?.main?.feelsLike  ?? 0)"
+        minTempLabel.text = "\(viewModel.cityWeather?.main?.tempMin  ?? 0)"
+        maxTempLabel.text = "\(viewModel.cityWeather?.main?.tempMax  ?? 0)"
+        descriptionLabel.text = viewModel.cityWeather?.weather?[0].weatherDescription
+        humidityLabel.text = "\(viewModel.cityWeather?.main?.humidity  ?? 0)"
+        windLabel.text = "\(viewModel.cityWeather?.wind?.speed  ?? 0)"
     }
-    */
-
 }

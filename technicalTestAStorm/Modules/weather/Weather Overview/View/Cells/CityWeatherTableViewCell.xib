@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProductSans-Regular.ttf">
+            <string>ProductSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityWeatherTableViewCell" rowHeight="129" id="KGk-i7-Jjw" customClass="CityWeatherTableViewCell" customModule="technicalTestAStorm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="418" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-1o-7ZR">
+                        <rect key="frame" x="15" y="7" width="388" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhm-HO-Wvm">
+                                <rect key="frame" x="20" y="15" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES1-uR-a3E">
+                                <rect key="frame" x="20" y="22" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkt-Fk-iYc">
+                                <rect key="frame" x="368" y="15" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-B0-E3t">
+                                <rect key="frame" x="368" y="17" width="0.0" height="83"/>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSN-w0-dyw">
+                                <rect key="frame" x="331" y="-2.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="2Ej-UI-iDq"/>
+                                    <constraint firstAttribute="width" secondItem="ZSN-w0-dyw" secondAttribute="height" id="rFC-eL-5wX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36470588235294116" green="0.31372549019607843" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kkt-Fk-iYc" firstAttribute="centerY" secondItem="ZSN-w0-dyw" secondAttribute="centerY" id="072-MS-OIo"/>
+                            <constraint firstItem="qhm-HO-Wvm" firstAttribute="top" secondItem="iMh-1o-7ZR" secondAttribute="top" constant="15" id="30h-Y0-jbT"/>
+                            <constraint firstItem="kkt-Fk-iYc" firstAttribute="leading" secondItem="ZSN-w0-dyw" secondAttribute="trailing" constant="2" id="3Q2-DL-2Bg"/>
+                            <constraint firstAttribute="trailing" secondItem="kkt-Fk-iYc" secondAttribute="trailing" constant="20" id="Bsx-2E-9uF"/>
+                            <constraint firstItem="ES1-uR-a3E" firstAttribute="top" secondItem="qhm-HO-Wvm" secondAttribute="bottom" constant="7" id="IYl-XW-5DB"/>
+                            <constraint firstItem="kkt-Fk-iYc" firstAttribute="top" secondItem="iMh-1o-7ZR" secondAttribute="top" constant="15" id="KAJ-Co-pJR"/>
+                            <constraint firstItem="sfX-B0-E3t" firstAttribute="top" secondItem="kkt-Fk-iYc" secondAttribute="bottom" constant="2" id="Pgz-cb-0wW"/>
+                            <constraint firstItem="kkt-Fk-iYc" firstAttribute="trailing" secondItem="sfX-B0-E3t" secondAttribute="trailing" id="RL8-ZH-IJL"/>
+                            <constraint firstItem="qhm-HO-Wvm" firstAttribute="leading" secondItem="iMh-1o-7ZR" secondAttribute="leading" constant="20" id="aQe-vo-cIE"/>
+                            <constraint firstAttribute="bottom" secondItem="sfX-B0-E3t" secondAttribute="bottom" constant="15" id="dwu-Hc-9Gt"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ES1-uR-a3E" secondAttribute="bottom" constant="15" id="qzJ-lx-85U"/>
+                            <constraint firstItem="ZSN-w0-dyw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qhm-HO-Wvm" secondAttribute="trailing" constant="15" id="tB3-lr-ebF"/>
+                            <constraint firstItem="ES1-uR-a3E" firstAttribute="leading" secondItem="qhm-HO-Wvm" secondAttribute="leading" id="uKR-Pq-S8L"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="iMh-1o-7ZR" secondAttribute="bottom" constant="7" id="Geo-57-YNv"/>
+                    <constraint firstItem="iMh-1o-7ZR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="QcD-UV-A3j"/>
+                    <constraint firstAttribute="trailing" secondItem="iMh-1o-7ZR" secondAttribute="trailing" constant="15" id="V9W-ta-BlY"/>
+                    <constraint firstItem="iMh-1o-7ZR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="kO3-g3-HwT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cityNameLabel" destination="qhm-HO-Wvm" id="OBc-Oc-Uu8"/>
+                <outlet property="conditionDescriptionLabel" destination="ES1-uR-a3E" id="e9n-4b-XPK"/>
+                <outlet property="conditionImageView" destination="ZSN-w0-dyw" id="UC5-20-mon"/>
+                <outlet property="fellsLikeLabel" destination="sfX-B0-E3t" id="Puv-82-eJx"/>
+                <outlet property="temptureLabel" destination="kkt-Fk-iYc" id="XiZ-vC-A8W"/>
+            </connections>
+            <point key="canvasLocation" x="208.69565217391306" y="110.15625"/>
+        </tableViewCell>
+    </objects>
+</document>
