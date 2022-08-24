@@ -49,6 +49,8 @@
 		57B84A0F28B66E860034A322 /* CityWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B84A0D28B66E860034A322 /* CityWeatherTableViewCell.xib */; };
 		57B84A1128B66F160034A322 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B84A1028B66F160034A322 /* UITableViewExtension.swift */; };
 		57B84A1328B66F550034A322 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B84A1228B66F550034A322 /* StringExtension.swift */; };
+		57B84A1828B6EB240034A322 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B84A1728B6EB240034A322 /* Localizable.swift */; };
+		57B84A1A28B6EB650034A322 /* SharedLocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B84A1928B6EB650034A322 /* SharedLocalizedStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		57B84A1228B66F550034A322 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		57B84A1528B6ABEE0034A322 /* ProductSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProductSans-Bold.ttf"; sourceTree = "<group>"; };
 		57B84A1628B6AC020034A322 /* ProductSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProductSans-Regular.ttf"; sourceTree = "<group>"; };
+		57B84A1728B6EB240034A322 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		57B84A1928B6EB650034A322 /* SharedLocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizedStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 				57B84A1428B6ABD20034A322 /* Fonts */,
 				5713FD5128B40E90006F0E8A /* Assets.xcassets */,
 				5713FD7928B418E2006F0E8A /* Localizable.strings */,
+				57B84A1928B6EB650034A322 /* SharedLocalizedStrings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				574C4A7728B554BC0045F6D1 /* Extension */,
 				5713FD9028B440C8006F0E8A /* Connectivity.swift */,
 				5713FD9228B443C1006F0E8A /* LocationGeoCoder.swift */,
+				57B84A1728B6EB240034A322 /* Localizable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -606,12 +612,14 @@
 				57B84A0E28B66E860034A322 /* CityWeatherTableViewCell.swift in Sources */,
 				574C4A9928B57A690045F6D1 /* SplashScreenViewController.swift in Sources */,
 				574C4A7328B4F6B90045F6D1 /* SubWeatherResponseModel.swift in Sources */,
+				57B84A1828B6EB240034A322 /* Localizable.swift in Sources */,
 				574C4A6F28B4F6530045F6D1 /* SysResponseModel.swift in Sources */,
 				574C4A6728B4F5490045F6D1 /* WindResponseModel.swift in Sources */,
 				5713FD8228B41F6E006F0E8A /* NetworkParameters.swift in Sources */,
 				5713FD4928B40E8E006F0E8A /* AppDelegate.swift in Sources */,
 				57B84A1128B66F160034A322 /* UITableViewExtension.swift in Sources */,
 				574C4A7928B554DD0045F6D1 /* UIViewControllerExtension.swift in Sources */,
+				57B84A1A28B6EB650034A322 /* SharedLocalizedStrings.swift in Sources */,
 				5713FD8C28B42E8A006F0E8A /* WeatherApiEndPoint.swift in Sources */,
 				574C4A6D28B4F62C0045F6D1 /* CoordinateResponseModel.swift in Sources */,
 				5713FD8728B42377006F0E8A /* ApiClient.swift in Sources */,

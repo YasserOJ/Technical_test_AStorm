@@ -18,7 +18,7 @@ class AddCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Add city"
+        self.title = SharedLocalizedString.addCityTitle.localized
         
         initViewModel()
     }

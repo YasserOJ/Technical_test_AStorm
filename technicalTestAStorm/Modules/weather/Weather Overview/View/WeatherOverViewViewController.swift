@@ -26,7 +26,7 @@ class WeatherOverViewViewController: UIViewController {
         super.viewDidLoad()
         
         
-        self.title = "Your cities"
+        self.title = SharedLocalizedString.yourCitiesTitle.localized
         let btn1 = UIButton(type: .custom)
         btn1.setImage(UIImage(named: "addIcon"), for: .normal)
         btn1.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
