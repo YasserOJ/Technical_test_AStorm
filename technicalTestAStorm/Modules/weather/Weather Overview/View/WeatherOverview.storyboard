@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProductSans-Regular.ttf">
+            <string>ProductSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Weather Over View View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,36 +22,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-Ra-8DI">
-                                <rect key="frame" x="0.0" y="107.5" width="414" height="788.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-Ra-8DI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-L9-sBy">
-                                <rect key="frame" x="186" y="491.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are No Data. please add cities" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-L9-sBy">
+                                <rect key="frame" x="31" y="411.5" width="352" height="73"/>
+                                <fontDescription key="fontDescription" name="ProductSans-Regular" family="Product Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJl-58-9fL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="107.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fnS-Ra-8DI" secondAttribute="trailing" id="2GS-7n-bDa"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dJl-58-9fL" secondAttribute="trailing" id="47S-8h-zXV"/>
-                            <constraint firstItem="dJl-58-9fL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ey3-zB-hsE"/>
-                            <constraint firstItem="fnS-Ra-8DI" firstAttribute="top" secondItem="dJl-58-9fL" secondAttribute="bottom" id="KKj-gC-6rQ"/>
+                            <constraint firstItem="fnS-Ra-8DI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BSX-cW-h7x"/>
+                            <constraint firstItem="Dtj-L9-sBy" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.85" id="LFm-dI-ttX"/>
                             <constraint firstAttribute="bottom" secondItem="fnS-Ra-8DI" secondAttribute="bottom" id="aV4-bg-e73"/>
                             <constraint firstItem="Dtj-L9-sBy" firstAttribute="centerY" secondItem="fnS-Ra-8DI" secondAttribute="centerY" id="cG0-hh-go8"/>
-                            <constraint firstItem="dJl-58-9fL" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.12" id="gPI-Gi-dWY"/>
                             <constraint firstItem="Dtj-L9-sBy" firstAttribute="centerX" secondItem="fnS-Ra-8DI" secondAttribute="centerX" id="hwa-W1-SPF"/>
                             <constraint firstItem="fnS-Ra-8DI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jAR-Cy-GUJ"/>
-                            <constraint firstItem="dJl-58-9fL" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="trS-JS-8oq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noCitiesLabel" destination="Dtj-L9-sBy" id="IfI-xT-LZG"/>
+                        <outlet property="tableView" destination="fnS-Ra-8DI" id="Wcf-Yd-roT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
