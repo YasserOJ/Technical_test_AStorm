@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let initialViewController = SplashScreenViewController.instantiate(appStoryboardName: "SplashScreenStoryBoard")
-        let navigationController = UINavigationController(rootViewController: initialViewController)
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
         
         setupConstraints()
