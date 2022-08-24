@@ -1,7 +1,10 @@
 /* 
-  Localizable.strings
-  technicalTestAStorm
-
-  Created by Yasser Omar Jammeli on 22/8/2022.
-  
-*/
+ Localizable.strings
+ technicalTestAStorm
+ 
+ Created by Yasser Omar Jammeli on 22/8/2022.
+ 
+ */
+"yourCitiesTitle" = "Your cities";
+"addCityTitle" = "Add city";
+"addMyLocationTitle" = "Add my location";

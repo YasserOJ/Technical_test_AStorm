@@ -74,7 +74,7 @@ class SplashScreenViewModel {
     func goToCitiesWeatherOverView(){
         DispatchQueue.main.async {
             let window = UIApplication.shared.windows[0] as UIWindow
-            let weatherOverViewController = WeatherOverViewViewController.instantiate(appStoryboardName: "WeatherOverview")
+            let weatherOverViewController = WeatherOverViewViewController.instantiate(appStoryboardName: .weatherOverview)
             let navigationController = UINavigationController(rootViewController: weatherOverViewController)
             window.rootViewController = navigationController
         }
