@@ -6,40 +6,70 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AddCityViewController: UIViewController {
-
+    
     @IBOutlet weak var cityNameTextField: UITextField!
+    
+    let viewModel = AddCityViewModel()
+    var didAddCityWithSuccess: () -> Void = {}
+    var didTookMyLocation = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Add city"
+        
+        initViewModel()
+    }
+    
+    func initViewModel()  {
+        viewModel.didAddLocationWithSuccess = { [unowned self] in
+            self.pop()
+            self.didAddCityWithSuccess()
+        }
+        
+        viewModel.didFailedCityAdd = { [unowned self] wsError in
+        }
     }
     
     @IBAction func addCity(_ sender: Any) {
-        WeatherApiManager().addLocation(cityName: cityNameTextField.text ?? "") { weather in
-            switch weather {
-                
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-            print(weather)
+        if let text = cityNameTextField.text, !text.isEmpty {
+            viewModel.getCityWeather(cityName: text)
+        } else {
+            
         }
     }
     
     @IBAction func addMyLocation(_ sender: Any) {
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
     }
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension AddCityViewController : CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !didTookMyLocation {
+            if let location = locations.first {
+                print(location.coordinate)
+                self.viewModel.getCityWithMyLocaion(location : location)
+                didTookMyLocation = true
+            }
+        }
     }
-    */
-
 }
