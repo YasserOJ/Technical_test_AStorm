@@ -10,6 +10,13 @@ import UIKit
 
 let defaultReferenceScreenWidth: CGFloat = (UIDevice().userInterfaceIdiom == .pad) ? 600 : 375.0
 
+enum AppStoryboard: String {
+    case splashScreen = "SplashScreenStoryBoard"
+    case weatherOverview = "WeatherOverview"
+    case cityWeatherDetail = "CityWeatherDetail"
+    case addCity = "AddCityViewControllerStoryBoard"
+}
+
 extension UIViewController {
     
     func push(viewController: UIViewController, animated: Bool = true) {
@@ -42,9 +49,9 @@ extension UIViewController {
         }
     }
 
-    class func instantiate<ViewController: UIViewController>(appStoryboardName: String) -> ViewController {
+    class func instantiate<ViewController: UIViewController>(appStoryboardName: AppStoryboard) -> ViewController {
 
-        let storyboard = UIStoryboard(name: appStoryboardName, bundle: nil)
+        let storyboard = UIStoryboard(name: appStoryboardName.rawValue, bundle: nil)
         let identifier = String(describing: self)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier)
         as? ViewController else {

@@ -43,7 +43,7 @@ class WeatherOverViewViewController: UIViewController {
     }
     
     @objc func goToAddCity() {
-        let addCityViewController = AddCityViewController.instantiate(appStoryboardName: "AddCityViewControllerStoryBoard") as! AddCityViewController
+        let addCityViewController = AddCityViewController.instantiate(appStoryboardName: .addCity) as! AddCityViewController
         addCityViewController.didAddCityWithSuccess = { [unowned self] in
             self.checkCitiesCount()
             self.tableView.reloadData()
@@ -68,7 +68,7 @@ extension WeatherOverViewViewController : UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cityWeatherDetailViewController = CityWeatherDetailViewController.instantiate(appStoryboardName: "CityWeatherDetail") as! CityWeatherDetailViewController
+        let cityWeatherDetailViewController = CityWeatherDetailViewController.instantiate(appStoryboardName: .cityWeatherDetail) as! CityWeatherDetailViewController
         cityWeatherDetailViewController.viewModel.cityWeather = viewModel.citiesWeather[indexPath.row]
         self.push(viewController: cityWeatherDetailViewController, animated: true)
     }
