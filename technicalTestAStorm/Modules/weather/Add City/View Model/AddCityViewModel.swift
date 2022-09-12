@@ -18,7 +18,7 @@ class AddCityViewModel {
     
     
     func getCityWithMyLocaion(location: CLLocation) {
-        weatherApiManager.addLocation(lat: location.coordinate.latitude, lng: location.coordinate.longitude) { result in
+        weatherApiManager.addLocation(lat: location.coordinate.latitude, lng: location.coordinate.longitude) { [unowned self] result in
             switch result {
             case .success(let cityWeather):
                 if let cityWeather = cityWeather {
@@ -26,6 +26,8 @@ class AddCityViewModel {
                     if let name = cityWeather.name {
                         AppManager.shared.cities.append(name)
                     }
+                    saveCities(allObjects: AppManager.shared.cities)
+                    saveWeathers(allObjects: AppManager.shared.userCitiesWeather)
                 }
                 self.didAddLocationWithSuccess()
             case .failure(let error):
